@@ -1,1 +1,30 @@
-[{"name":"Test","address":"Mytest location 1","cuisine":"Spicy Mexician","website":"https://mytest.com","description":"This is great exercise!"},{"name":"This a second test","address":"My second test, location 2","cuisine":"Indian Spicy","website":"https://mygreattest.com","description":"This is also great!"},{"name":"Test number 3","address":"The greattest test, location unknown","cuisine":"Javanese Wadon","website":"https://restaurants.com","description":"This is great restaurants in the world!"},{"name":"Restaurant number 4","address":"Location Unkown - This is a song","cuisine":"Sundanese Wadon","website":"https://wikipedia.com","description":"Sundanese Wadon are very beautiful"}]
+[
+  {
+    "name": "Test",
+    "address": "Mytest location 1",
+    "cuisine": "Spicy Mexician",
+    "website": "https://mytest.com",
+    "description": "This is great exercise!"
+  },
+  {
+    "name": "This a second test",
+    "address": "My second test, location 2",
+    "cuisine": "Indian Spicy",
+    "website": "https://mygreattest.com",
+    "description": "This is also great!"
+  },
+  {
+    "name": "Test number 3",
+    "address": "The greattest test, location unknown",
+    "cuisine": "Javanese Wadon",
+    "website": "https://restaurants.com",
+    "description": "This is great restaurants in the world!"
+  },
+  {
+    "name": "Restaurant number 4",
+    "address": "Location Unkown - This is a song",
+    "cuisine": "Sundanese Wadon",
+    "website": "https://wikipedia.com",
+    "description": "Sundanese Wadon are very beautiful"
+  }
+]
