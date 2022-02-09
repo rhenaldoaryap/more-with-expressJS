@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Test",
+    "address": "Mytest location 1",
+    "cuisine": "Spicy Mexician",
+    "website": "https://mytest.com",
+    "description": "This is great exercise!"
+  },
+  {
+    "name": "This a second test",
+    "address": "My second test, location 2",
+    "cuisine": "Indian Spicy",
+    "website": "https://mygreattest.com",
+    "description": "This is also great!"
+  }
+]
