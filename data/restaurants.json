@@ -1,5 +1,6 @@
 [
   {
+    "id": "r1",
     "name": "Test",
     "address": "Mytest location 1",
     "cuisine": "Spicy Mexician",
@@ -7,6 +8,7 @@
     "description": "This is great exercise!"
   },
   {
+    "id": "r2",
     "name": "This a second test",
     "address": "My second test, location 2",
     "cuisine": "Indian Spicy",
@@ -14,6 +16,7 @@
     "description": "This is also great!"
   },
   {
+    "id": "r3",
     "name": "Test number 3",
     "address": "The greattest test, location unknown",
     "cuisine": "Javanese Wadon",
@@ -21,10 +24,19 @@
     "description": "This is great restaurants in the world!"
   },
   {
+    "id": "r4",
     "name": "Restaurant number 4",
     "address": "Location Unkown - This is a song",
     "cuisine": "Sundanese Wadon",
     "website": "https://wikipedia.com",
     "description": "Sundanese Wadon are very beautiful"
+  },
+  {
+    "name": "Nasi Padang",
+    "address": "Padang, Sumatra Barat",
+    "cuisine": "Nasi Padang Paket 10ribu",
+    "website": "https://nasipadang.com",
+    "description": "Nasi Padang is the finest foods in the world!",
+    "id": "41febf00-8215-44e4-aa2e-1dcba571b7d5"
   }
 ]
