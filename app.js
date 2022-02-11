@@ -4,6 +4,8 @@ const path = require("path");
 const express = require("express");
 const uuid = require("uuid");
 
+const restaurantData = require("./util/restaurant-data");
+
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -23,9 +25,7 @@ app.get("/", function (req, res) {
 app.get("/restaurants/:id", function (req, res) {
   const restaurantId = req.params.id;
 
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  const storedRestaurants = restaurantData.getStoredRestaurants();
 
   for (const restaurant of storedRestaurants) {
     if (restaurant.id === restaurantId) {
@@ -33,13 +33,11 @@ app.get("/restaurants/:id", function (req, res) {
     }
   }
 
-  res.render("404");
+  res.status(404).render("404");
 });
 
 app.get("/restaurants", function (req, res) {
-  const filePath = path.join(__dirname, "data", "restaurants.json");
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  const storedRestaurants = restaurantData.getStoredRestaurants();
 
   res.render("restaurants", {
     numberOfRestaurants: storedRestaurants.length,
@@ -52,15 +50,13 @@ app.get("/recommend", function (req, res) {
 });
 
 app.post("/recommend", function (req, res) {
-  const restaurants = req.body;
-  restaurants.id = uuid.v4();
-  const filePath = path.join(__dirname, "data", "restaurants.json");
+  const restaurant = req.body;
+  restaurant.id = uuid.v4();
+  const restaurants = restaurantData.getStoredRestaurants();
 
-  const fileData = fs.readFileSync(filePath);
-  const storedRestaurants = JSON.parse(fileData);
+  restaurants.push(restaurant);
 
-  storedRestaurants.push(restaurants);
-  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
+  restaurantData.storeRestaurants(restaurants);
 
   res.redirect("/confirm");
 });
@@ -74,11 +70,11 @@ app.get("/about", function (req, res) {
 });
 
 app.use(function (req, res) {
-  res.render("404");
+  res.status(404).render("404");
 });
 
 app.use(function (error, req, res, next) {
-  res.render("500");
+  res.status(500).render("500");
 });
 
 app.listen(3000);
